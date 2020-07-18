@@ -1,5 +1,3 @@
-//VARIÁVEIS
-let maior = 0
 //USUÁRIO
 const user = {
     name: "Antonio Stanislaw",
@@ -9,20 +7,18 @@ const user = {
     balance: 0
 }
 
-
 //declaração de funções
-function createTransaction(type, value){
-    if (type == "credit"){
+//cria um transação
+function createTransaction(type, value) {
+    if (type == "credit") {
         var transaction = {
             type1: type,
             value1: value
         }
         user.transactions.push(transaction)
-        user.balance = user.balance +transaction.value1
-        // console.table(user.transactions)
-        // console.log(user.balance)
+        user.balance = user.balance + transaction.value1
 
-    }else if(type == "debit"){
+    } else if (type == "debit") {
         var transaction = {
             type1: type,
             value1: value
@@ -31,32 +27,44 @@ function createTransaction(type, value){
         //Contabiliza o saldo
         user.balance = user.balance - transaction.value1
         // detalha as transações
-        
+
     }
     console.table(user.transactions)
 }
 
-function getHigherTrasactionByType(type){    
+//Verifica qual o maior valor por tipo de transação
+function getHigherTrasactionByType(type) {
+    // Variável local "MAIOR"
+    var larger = 0
 
-        for (let i in user.transactions){
-            
+    //condição para caso não haja contas do tipo debito/credito
+    if((type != "debit") && (type != "credit")){
+        console.log(`Type of transaction does not correspond
+        to any debit/credit transaction`)
+        
+    }else{
 
-                if ((user.transactions[i].type1 == type) && (maior < user.transactions[i].value1)){
-                    maior = user.transactions[i]
-                    // console.log(i)
-                    
-                }
-            
-        }
-        console.log(maior)
+        for (let i in user.transactions) {
     
+            if ((user.transactions[i].type1 == type) && (larger < user.transactions[i].value1)) {
+    
+                var larger = user.transactions[i].value1
+                var aux = user.transactions[i]
+    
+            }
+            
+    
+        }
+        console.log(aux)
+    }
+
 }
 
 //Chamando as funções
 /* ########## CRÉDITO ########## */
 createTransaction("credit", 10)
 createTransaction("credit", 290)
-createTransaction("credit", 70)
+createTransaction("credit", 50)
 createTransaction("credit", 600)
 
 /* ########### DÉBITO ############*/
@@ -64,7 +72,4 @@ createTransaction("debit", 50)
 createTransaction("debit", 700)
 
 console.log(`My balance is: R$ ${user.balance.toFixed(2)}`)
-getHigherTrasactionByType("credit")
-// maior = getHigherTrasactionByType("debit")
-// console.log(user.transactions[0].value1)
-// console.log(maior)
+getHigherTrasactionByType("debit")

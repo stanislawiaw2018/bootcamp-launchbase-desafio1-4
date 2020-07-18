@@ -41,7 +41,7 @@ Nesse desafio - foi criado um algoritmo para realizar operações bancárias na 
 
 Onde foi criado os seguintes métodos:
 - createTransation(){} -> Método para adicionar os elementos no array
-- getHigherTransactionByType(){} -> Método que verifica qual é a maior trasação de crétido e débito
+- getHigherTransactionByType(){} -> Método que verifica qual é a larger trasação de crétido e débito
 - getAverageTransactionValue(){} -> Método que cálcula o valor médio das transações
 - getTransactionsCount(){} -> Método que retorna o número de transações de cada tipo (crédito/débito)
 
