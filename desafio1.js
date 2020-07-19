@@ -7,7 +7,10 @@ const user = {
     balance: 0
 }
 
-//declaração de funções
+/* ##############################################################
+declaração de funções
+################################################################# */
+
 //cria um transação
 function createTransaction(type, value) {
     if (type == "credit") {
@@ -60,16 +63,61 @@ function getHigherTrasactionByType(type) {
 
 }
 
-//Chamando as funções
+//Media das transações independe do seu tipo
+function getAverageTransactionValue(){
+    var media = 0
+    var soma = 0
+    for (let i in user.transactions){
+        soma += user.transactions[i].value1
+    }
+    media = soma/user.transactions.length
+    console.log(`A média das transações realizadas pelo usuário
+    ${user.name} é R$ ${media.toFixed(2)}`)
+}
+
+//Conta o numero de transações realizadas de acordo com o seu tipo
+function getTransactionsCount(){
+    let count = {
+        credit: 0,
+        debit: 0
+    }
+    for (let i in user.transactions){
+        if (user.transactions[i].type1 == "credit"){
+            count.credit++
+        }
+        if (user.transactions[i].type1 == "debit"){
+            count.debit++
+        }
+    }
+
+    console.log(count)
+
+}
+/* #################################################################
+Chamando as funções 
+####################################################################*/
+
 /* ########## CRÉDITO ########## */
+
 createTransaction("credit", 10)
 createTransaction("credit", 290)
 createTransaction("credit", 50)
 createTransaction("credit", 600)
+createTransaction("credit", 690)
+createTransaction("credit", 900)
+
+
+/* ############################## */
 
 /* ########### DÉBITO ############*/
+
 createTransaction("debit", 50)
 createTransaction("debit", 700)
+createTransaction("debit", 1100)
+
+/* ############################### */
 
 console.log(`My balance is: R$ ${user.balance.toFixed(2)}`)
-getHigherTrasactionByType("debit")
+getHigherTrasactionByType("credit")
+getAverageTransactionValue()
+getTransactionsCount()
