@@ -21,7 +21,7 @@
 <h5 align="center">
 <p style=color:black>ÍNDICE</P>
 
-[Sobre o desafio](#-Sobre-o-desafio) | [Tecnologias Utilizadas](#-Tecnologias-Utilizadas) | [Como baixar o projeto](#-Como-baixar-o-projeto) | [Licença](#-Licença) | [Autor](#-Autor)
+[Sobre o desafio](#-Sobre-o-desafio) | [Tecnologias Utilizadas](#-Tecnologias-utilizadas) | [Como baixar o projeto](#-Como-baixar-o-projeto) | [Licença](#-Licença) | [Autor](#-autor)
 
 </h5>
 
